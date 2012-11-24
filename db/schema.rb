@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(:version => 20121124070600) do
 
   create_table "weather_data", :force => true do |t|
-    t.integer  "temp"
-    t.integer  "temp_low"
-    t.integer  "temp_high"
-    t.integer  "visibility"
-    t.integer  "humidity"
-    t.integer  "pressure"
+    t.float    "temp"
+    t.float    "temp_low"
+    t.float    "temp_high"
+    t.float    "visibility"
+    t.float    "humidity"
+    t.float    "pressure"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.integer  "data_datetime"
