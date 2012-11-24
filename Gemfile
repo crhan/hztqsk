@@ -38,6 +38,8 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem "sidekiq"
+gem "nokogiri"
+gem "pry-rails"
 
 group :development, :test do
   gem "rspec-rails"

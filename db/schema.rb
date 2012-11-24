@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121124044754) do
+ActiveRecord::Schema.define(:version => 20121124070600) do
 
   create_table "weather_data", :force => true do |t|
     t.integer  "temp"
@@ -20,8 +20,9 @@ ActiveRecord::Schema.define(:version => 20121124044754) do
     t.integer  "visibility"
     t.integer  "humidity"
     t.integer  "pressure"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "data_datetime"
   end
 
 end
