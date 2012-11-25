@@ -1,4 +1,7 @@
 Hztqsk::Application.routes.draw do
+  get "weather/show"
+  root :to => "weather#show"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title 杭州天气实况
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    meta http-equiv="content-type" content="text/html; charset=utf-8"
+    link href="http://feeds.feedburner.com/hzqxsk" title="杭州'实时'气象数据» Feed" type="application/rss+xml" rel="alternate"
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    = stylesheet_link_tag "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  body
+    .navbar.navbar-static-top
+      .navbar-inner
+        .container
+          = link_to "杭州实时气象数据表 - 24 小时", root_path, :class => "brand"
+          ul.nav
+            li= link_to "https://twitter.com/intent/follow?original_referer=http%3A%2F%2Ftwitter.com%2Fabout%2Fresources%2Fbuttons&region=follow_link&screen_name=hzqxsk&source=followbutton&variant=2.0", :title => "在 Twitter 上关注 @hzqxsk" do
+              i.icon-follow.follow
+              | 关注 @hzqxsk
+    .container
+      == yield

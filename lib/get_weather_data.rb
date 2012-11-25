@@ -18,11 +18,11 @@ class GetWeatherData
     }.map {|j|
       j.match(REGEX).captures
     }.last
-    hour, temp, temp_low, temp_high = result.map{|e| e.nil? ? nil : e.to_i}
+    hour, temp, temp_low, temp_high = result.map{|e| e.nil? ? nil : e.to_f}
     time = Time.now.to_a
     time[0,3] = 0, 0, hour
     time[4] -= 1 if hour > Time.now.hour
-    data_datetime = Time.local(*time)
+    data_datetime = Time.local(*time).to_i
     [ data_datetime, { :temp      => temp,
                        :temp_low  => temp_low,
                        :temp_high => temp_high } ]
