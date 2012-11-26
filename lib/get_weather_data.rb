@@ -2,11 +2,14 @@
 require 'net/http'
 
 class GetWeatherData
-  REGEX = /时间：(\d{1,2})时[#&\w&\d]*?温度：([-\d.]*?)℃(?:[#&\w&\d]*?最低温度：([-\d.]*?)℃)?(?:[#&\w&\d]*?最高温度：([-\d.]*?)℃)?/
+  TEMPER_REG = /时间：(\d{1,2})时[#&\w&\d]*?温度：([-\d.]*?)℃(?:[#&\w&\d]*?最低温度：([-\d.]*?)℃)?(?:[#&\w&\d]*?最高温度：([-\d.]*?)℃)?/
+  PRESS_REG = /时间：(\d{1,2})时[#&\w&\d]*?气压：([.\d]*)(.*?)\'/
+  HUMID_REG = /时间：(\d{1,2})时[#&\w&\d]*?湿度：([.\d]*)/
+  VISIB_REG = /时间：(\d{1,2})时[#&\w&\d]*?能见度：([\d.]*)(.*?)\'/
 
   @@http ||= Net::HTTP.new("www.hzqx.com")
 
-  def self.qxsk
+  def self.temp
     instance = self.new
     resp = instance.get("/gzhfw/qxsk.asp")
     body = resp.body.encode("utf-8", "gbk")
@@ -26,6 +29,10 @@ class GetWeatherData
     [ data_datetime, { :temp      => temp,
                        :temp_low  => temp_low,
                        :temp_high => temp_high } ]
+  end
+
+  def self.pressure
+
   end
 
   def get(path)

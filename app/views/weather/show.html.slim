@@ -1,2 +1,19 @@
-h1 Weather#show
-p Find me in app/views/weather/show.html.erb
+.row
+  .span7
+    table.table.table-condensed
+      caption 杭州实时气象数据表 - 24 小时
+      thead
+        tr
+          th 日期
+          th 温度/℃
+          th 气压/hPa
+          th 能见度/km
+          th 相对湿度/%
+      tbody
+        - @data.each do |d|
+          tr
+            th= Time.at(d.data_datetime)
+            td= d.temp
+            td= d.pressure
+            td= d.visibility
+            td= d.humidity
