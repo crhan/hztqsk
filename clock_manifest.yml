@@ -1,0 +1,18 @@
+---
+applications:
+  .:
+    name: hzqxsk-clockwork
+    framework:
+      name: standalone
+      info:
+        mem: 64M
+        description: hzqxsk clockwork
+        exec: 
+    url: 
+    mem: 256M
+    runtime: ruby19
+    command: bundle exec clockwork clock.rb
+    instances: 1
+    services:
+      redis-hzqxsk:
+        type: redis

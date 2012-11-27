@@ -1,0 +1,18 @@
+---
+applications:
+  .:
+    name: hzqxsk-sidekiq
+    framework:
+      name: standalone
+      info:
+        mem: 128M
+        description: hzqxsk sidekiq
+        exec: 
+    url: 
+    mem: 256M
+    runtime: ruby19
+    command: RAILS_ENV=production bundle exec sidekiq
+    instances: 1
+    services:
+      redis-hzqxsk:
+        type: redis
