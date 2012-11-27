@@ -44,6 +44,7 @@ gem "sidekiq"
 gem "nokogiri"
 gem "pry-rails"
 gem "slim-rails"
+gem "clockwork", :require => false
 
 group :development, :test do
   gem "rspec-rails"

@@ -33,6 +33,8 @@ GEM
     celluloid (0.12.3)
       facter (>= 1.6.12)
       timers (>= 1.0.0)
+    clockwork (0.4.0)
+      tzinfo
     coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -163,6 +165,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  clockwork
   coffee-rails (~> 3.2.1)
   jquery-rails
   less-rails

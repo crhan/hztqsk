@@ -3,6 +3,7 @@ require 'net/http'
 
 class CronWorker
   include Sidekiq::Worker
+  sidekiq_options :retry => 2
 
   def perform
     update_data GetWeatherData.get_temp
