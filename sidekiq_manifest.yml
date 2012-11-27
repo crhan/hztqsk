@@ -16,3 +16,5 @@ applications:
     services:
       redis-hzqxsk:
         type: redis
+      mysql-hzqxsk:
+        type: mysql
