@@ -1,4 +1,4 @@
-worker_process 1
+worker_processes 1
 preload_app true
 timeout 60
 listen "127.0.0.1:8002"
