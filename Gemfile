@@ -5,7 +5,6 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 
 
 # Gems used only for assets and not required
@@ -32,10 +31,9 @@ gem 'jquery-rails'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger
 # gem 'debugger'
@@ -48,4 +46,11 @@ gem "clockwork", :require => false
 
 group :development, :test do
   gem "rspec-rails"
+  gem 'sqlite3'
+  gem 'capistrano', :require => false
+  gem 'capistrano-unicorn', :require => false
+end
+
+group :production do
+  gem "mysql2"
 end
