@@ -1,5 +1,5 @@
 class WeatherController < ApplicationController
   def show
-    @data = WeatherData.limit(24)
+    @data = WeatherData.order("data_datetime DESC").limit(24)
   end
 end
